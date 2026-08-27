@@ -6,7 +6,7 @@ This repository is a fork of the official DeepSeek Harness project at
 <https://github.com/deepseek-ai/deepseek-harness.git>. The branching model is
 split by purpose:
 
-- **`main`** tracks the official upstream. It stays on the upstream history and
+- **`master`** tracks the official upstream. It stays on the upstream history and
   is used only to sync official updates; do not land personal changes here.
 - **`dev`** carries personal 魔改 (custom modifications) on top of upstream. It
   is the working branch where the user's own changes accumulate.
@@ -119,13 +119,13 @@ cd ~/Documents/deepseek-harness/superpowers-ssy/dsh-primer   # dev branch
 pnpm build                              # rebuild lib/; profiles pick it up live via the link, no reinstall
 ```
 
-### Sync harness from upstream (keep `main` clean, then merge-forward `dev`)
+### Sync harness from upstream (keep `master` clean, then merge-forward `dev`)
 
 ```sh
 cd ~/Documents/deepseek-harness-ssy
 git fetch upstream
-git checkout main && git merge upstream/main        # main tracks upstream only
-git checkout dev && git merge main                  # bring upstream into the 魔改 branch
+git checkout master && git merge upstream/master    # master tracks upstream only
+git checkout dev && git merge master                # bring upstream into the 魔改 branch
 # resolve conflicts, then (with explicit user approval) push to origin fork
 ```
 

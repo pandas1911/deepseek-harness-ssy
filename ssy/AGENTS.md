@@ -76,9 +76,6 @@ Two checkouts are in play; keep their roles distinct:
   the `web` and `headless` profiles as a `link:` symlink
   (`@local/dsh-superpowers-primer`). Its devDeps `link:` the local harness
   packages so it shares the `dev` core.
-- **Published plugin**: `@nanmicoder/dsh-agent-teams` is installed from npm via
-  `dsh plugin --profile web add @nanmicoder/dsh-agent-teams@latest`; it is not
-  maintained locally.
 
 ### Run dsh (from the harness `dev` source, never a global install)
 

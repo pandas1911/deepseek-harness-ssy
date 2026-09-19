@@ -295,7 +295,10 @@
       "@deepseek-ai/dsh-agent": ["./packages/core/agent/src"],
       "@deepseek-ai/dsh-agent-default-model": ["./packages/core/agent-default-model/src"],
       "@deepseek-ai/dsh-agent-instructions": ["./packages/context/agent-instructions/src"],
-      "@deepseek-ai/dsh-agent-loop": ["./packages/core/agent-loop/src"],
+      // ssy: runtime plane workaround — tsx would load these from src while the
+      // loader instantiates plugins from lib, splitting the TOOL_RUNTIME_SCHEDULER
+      // symbol and crashing every tool call with "reading 'prepare'". Keep runtime on lib.
+      // "@deepseek-ai/dsh-agent-loop": ["./packages/core/agent-loop/src"],
       "@deepseek-ai/dsh-agent-loop-testkit": ["./packages/test-support/agent-loop-testkit/src"],
       "@deepseek-ai/dsh-agent-presets": ["./packages/preset/agent-presets/src"],
       "@deepseek-ai/dsh-agent-presets/invariant": ["./packages/preset/agent-presets/src/invariant.ts"],
@@ -481,7 +484,7 @@
       "@deepseek-ai/dsh-tool-web": ["./packages/web/tool-web/src"],
       "@deepseek-ai/dsh-tool-workflow": ["./packages/workflow/tool-workflow/src"],
       "@deepseek-ai/dsh-tool-workflow/invariant": ["./packages/workflow/tool-workflow/src/invariant.ts"],
-      "@deepseek-ai/dsh-tools": ["./packages/core/tools/src"],
+      // "@deepseek-ai/dsh-tools": ["./packages/core/tools/src"],
       "@deepseek-ai/dsh-tools/invariant": ["./packages/core/tools/src/invariant.ts"],
       "@deepseek-ai/dsh-user-approval": ["./packages/interaction/user-approval/src"],
       "@deepseek-ai/dsh-user-approval/invariant": ["./packages/interaction/user-approval/src/invariant.ts"],
